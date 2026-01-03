@@ -57,25 +57,36 @@ header p{
 @keyframes blink{
     50%{border-color:transparent}
 }
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(18, 18, 18, 0.9);
-            padding: 1rem;
-            z-index: 100;
-            text-align: center;
-        }
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(18, 18, 18, 0.95);
+    padding: 0.8rem 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;          /* ⬅️ bisa geser ke samping */
+    white-space: nowrap;       /* ⬅️ cegah turun ke bawah */
+}
 
-        nav a {
-            color: #ffffff;
-            margin: 0 1rem;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        nav a:hover {
-            color: #00d4ff; 
-        }
+nav::-webkit-scrollbar {
+    display: none;             /* ⬅️ hilangkan scrollbar */
+}
+
+nav a {
+    color: #ffffff;
+    margin: 0 0.8rem;
+    text-decoration: none;
+    font-size: 0.9rem;
+    flex-shrink: 0;            /* ⬅️ jangan mengecil */
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #00d4ff;
+}
+
         section {
             padding: 4rem 10%;
             max-width: 800px;
